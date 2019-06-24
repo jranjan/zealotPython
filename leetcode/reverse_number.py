@@ -13,15 +13,16 @@
 # of division operator. I made couple of mistake in using operand.
 #
 
-
 class Solution(object):
     def reverse(self, x):
         """
         :type x: int
         :rtype: int
-        """
-        n = x
-        nl = []
+        """        
+        
+        nl = []        
+        nf = -1 if x < 0 else 1        
+        n = abs(x)
         while n > 9:
             nl.append(n % 10)
             n = n /10
@@ -29,11 +30,15 @@ class Solution(object):
         new_n = 0
         for v in nl:
             new_n = new_n * 10 + v
-        return new_n
+            if abs(new_n) > (pow(2, 31)-1):
+                return 0
+        return new_n * nf 
 
 if __name__ == "__main__":
     s = Solution()
     print(s.reverse(1234))
+	print(s.reverse(-1234))
     print(s.reverse(12))
     print(s.reverse(1))
     print(s.reverse(10))
+	print(s.reverse(-1234242424))

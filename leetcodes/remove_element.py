@@ -31,6 +31,11 @@ class Solution(object):
                 max = max - 1
             else:
                 i = i + 1
-            print nums
 
         return len(nums)
+
+
+if __name__ == "__main__":
+    s = Solution()
+    nums = [0,1,2,2,3,0,4,2]
+    print(s.removeElement(nums, 2))

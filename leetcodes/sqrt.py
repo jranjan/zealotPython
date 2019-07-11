@@ -22,7 +22,6 @@ class Solution(object):
         while s * s <= x:
             s = s + 1
 
-
         if s * s > x:
             s = s - 1
         return s

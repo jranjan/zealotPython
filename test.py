@@ -1,28 +1,22 @@
 class Solution(object):
-    def removeElement(self, nums, val):
+    def climbStairs(self, n):
         """
-        :type nums: List[int]
-        :type val: int
+        :type n: int
         :rtype: int
         """
-        max = len(nums)
-        if max == 0:
+        return self.climbStairs(0, n)
+
+    def _climb_stairs(self, i, n):
+        # Every step, we are deciding how we can go above by 1 or 2 steps.
+        # We are just adding up those numbers. Effectively, we are moving up
+        # using recursion. At the same time, we need to terminal condition
+        # and that will be as soon as we reach top and i.e. if current step
+        # is the top most layer. Why not eeual? Because you have reached the
+        # place where yo wanted to.
+        if i > n:
             return 0
 
-        i = c = 0
-        # Using rnage(start, stop, step) for syntax exploration only
-        while i<max:
-            if nums[i] == val:
-                del nums[i]
-                c = c + 1
-                max = max - 1
-            else:
-                i = i + 1
+        if i == n:
+            return 1
 
-        print nums
-        return c
-
-if __name__ == "__main__":
-    s = Solution()
-    nums = [0,1,2,2,3,0,4,2]
-    print(s.removeElement(nums, 2))
+        return self._climb_stairs(i + 1, n) + self._climb_stairs(i + 2, n)

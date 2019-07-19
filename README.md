@@ -12,3 +12,10 @@ uses licensed code then consumer is expected to ensure that they have
 proper license before using it for commercial use. The purpose of current
 repo is not to distribute licensed code in any means and is solely
 meant for learning purpose.
+
+# Contents
+
+* [Language constructs](core)
+* [leetcode](leetcodes)
+* [micro-projects](micro-projects)
+* [idoms](idoms)

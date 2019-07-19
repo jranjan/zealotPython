@@ -20,4 +20,3 @@ class Solution(object):
             return 1
 
         return self._climb_stairs(i + 1, n) + self._climb_stairs(i + 2, n)
-    

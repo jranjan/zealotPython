@@ -28,14 +28,13 @@ class Solution(object):
                 c = 0
             i = i + 1
 
-        print(r)
         while i < max:
             s = int(leftover[i]) + c
             if s == 2:
                 r.append('0')
                 c = 1
             else:
-                r.append('1')
+                r.append(str(s))
                 c = 0
             i = i + 1
 

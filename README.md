@@ -15,7 +15,7 @@ meant for learning purpose.
 
 # Contents
 
-* [Language constructs](core)
-* [leetcode](leetcodes)
-* [micro-projects](micro-projects)
+* [Language constructs](labs/language)
+* [leetcode](labs/algorithm)
+* [micro-projects](labs/ideas)
 * [idoms](idoms)

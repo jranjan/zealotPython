@@ -18,4 +18,11 @@ meant for learning purpose.
 * [Language constructs](labs/language)
 * [leetcode](labs/algorithm)
 * [micro-projects](labs/ideas)
-* [idoms](idoms)
+* [idoms](idoms)xs
+
+# Reference
+
+- pytest
+    - [Official site](https://docs.pytest.org/en/7.0.x/)
+    - [Learn pytest youtube](https://www.youtube.com/watch?v=snDSB9b8v_E)   
+    - [pytest-html](https://pypi.org/project/pytest-html/)

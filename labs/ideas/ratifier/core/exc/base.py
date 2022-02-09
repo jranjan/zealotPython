@@ -1,0 +1,2 @@
+class RatifierException(Exception):
+    pass

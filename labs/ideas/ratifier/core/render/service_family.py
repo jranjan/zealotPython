@@ -1,14 +1,14 @@
 from labs.ideas.ratifier.core.runner.pytest_runner import PytestRunner
-from labs.ideas.ratifier.core.sdk.render.render import Render
+from labs.ideas.ratifier.core.render import Render
 
 
 class ServiceFamilyRender(Render):
-    def __init__(self, test_location, test_suite_default, test_report_name, test_report_location):
-        self.name = 'Composite'
-        self.test_suite_location = test_location
-        self.test_suite_type = test_suite_default
-        self.test_report_name = test_report_name
-        self.test_report_location = test_report_location
+    def __init__(self, test_location, test_suite_type, test_report_name, test_report_location):
+        super(ServiceFamilyRender, self).__init__('ServiceFamily',
+                                                  test_location,
+                                                  test_suite_type,
+                                                  test_report_name,
+                                                  test_report_location)
 
     def render(self):
         service_attrs = dict()

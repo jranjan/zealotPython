@@ -4,11 +4,13 @@ from labs.ideas.ratifier.core.sdk.render.render import Render
 
 class ServiceRender(Render):
     def __init__(self, service, test_location, test_suite_type, test_report_name, test_report_location):
-        self.name = service
-        self.test_suite_location = test_location
-        self.test_suite_type = test_suite_type
-        self.test_report_name = test_report_name
-        self.test_report_location = test_report_location
+        print('OK')
+        super(ServiceRender, self).__init__(service,
+                                            test_location,
+                                            test_suite_type,
+                                            test_report_name,
+                                            test_report_location)
+        print('OK')
 
     def render(self):
         service_attrs = dict()
@@ -17,5 +19,6 @@ class ServiceRender(Render):
         service_attrs['test_suite_location'] = self.test_suite_type
         service_attrs['test_report_name'] = self.test_report_name
         service_attrs['test_report_location'] = self.test_report_location
-        r = PytestRunner();
+
+        r = PytestRunner()
         r.run(service_attrs)

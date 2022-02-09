@@ -6,7 +6,7 @@ from labs.ideas.ratifier.tests.service.sync_ssr.utils import ingest_service as u
 @pytest.mark.qual
 @pytest.mark.fullqual
 def test_ingest_falcon_service_happy():
-    '''Title: Validates ingestion of new falcon service
+    """Title: Validates ingestion of new falcon service
 
     Description:
 
@@ -16,7 +16,7 @@ def test_ingest_falcon_service_happy():
         3. Wait for ingestion of data i.e. sync-ssr to complete
         4. Get data from USD core API
         5. Verify correctness
-    '''
+    """
     utils_ingest.create_falcon_service()
     utils_ingest.run_sync_job()
     utils_ingest.wait_for_sync_job()
@@ -26,7 +26,7 @@ def test_ingest_falcon_service_happy():
 
 @pytest.mark.fullqual
 def test_ingest_falcon_service_incorrectly():
-    '''Title: Validates ingestion of new falcon service but with incorrect dataset
+    """Title: Validates ingestion of new falcon service but with incorrect dataset
 
     Description:
 
@@ -35,8 +35,8 @@ def test_ingest_falcon_service_incorrectly():
         2. Run the sync-ssr
         3. Wait for ingestion of data i.e. sync-ssr to complete
         4. Get data from USD core API
-        5. Verify correctness
-    '''
+        5. Verify expectation
+    """
     utils_ingest.create_falcon_service_incorrect()
     utils_ingest.run_sync_job()
     utils_ingest.wait_for_sync_job()

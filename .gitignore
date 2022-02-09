@@ -1,5 +1,4 @@
-.pyc
-venv
-.ratifer_reports
+*.pyc
+*.ratifer_reports
 
 

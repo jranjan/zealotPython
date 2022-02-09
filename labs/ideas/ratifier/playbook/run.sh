@@ -1,5 +1,6 @@
 #!/bin/bash
-#!/bin/bash
+
+
 
 helpFunction()
 {
@@ -10,25 +11,24 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-while getopts "a:b" opt
+while getopts "s:t" opt
 do
    case "$opt" in
-      a ) SERVICE="$OPTARG" ;;
-      b ) SUITE="$OPTARG" ;;
+      s ) SERVICE="$OPTARG" ;;
+      t ) SUITE="$OPTARG" ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
 
-if [ -z "SERVICE" ] || [ -z "$parameterB" ] || [ -z "$parameterC" ]
+if [ -z "SERVICE" ]
 then
-   runall
+   echo '!!! Service parameter is not provided !!!'
    helpFunction
-else;
-  runone
 fi
 
+if [ -z "SUITE" ]
+then
+  SUITE='miniqual'
+fi
 
-# Begin script in case all parameters are correct
-echo "$parameterA"
-echo "$parameterB"
-echo "$parameterC"
+python3 ./labs/ideas/ratifier/cli.py run --service $SERVICE --suite SUITE

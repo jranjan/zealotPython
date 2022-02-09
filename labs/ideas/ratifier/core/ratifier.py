@@ -1,4 +1,4 @@
-from labs.ideas.ratifier.core.sdk.render.service import ServiceRender
+from labs.ideas.ratifier.core.render.service import ServiceRender
 
 
 class Ratifier(object):

@@ -7,6 +7,11 @@ def create_falcon_service():
     print('Creating a falcon service')
 
 
+def create_falcon_service_incorrect():
+    SalesforceServiceRegistry.create_service_defintion('falcon-service-definition', 'test_service_incorrect.yaml')
+    print('Creating a falcon service')
+
+
 def run_sync_job():
     SyncJob.schedule('air-batch.sync-ssr')
     print('Run sync job')

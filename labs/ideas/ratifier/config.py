@@ -15,12 +15,9 @@ class RatifierConfig(object):
 
     def load(self, conf):
         if conf is None:
-            print('OK1')
             self.test_rootd = "./labs/ideas/ratifier/tests"
             if not System.is_directory_exist(self.test_rootd):
-                print('OK2e')
                 raise ConfigException()
-            print('OK2')
             self.test_reportd = "./labs/ideas/ratifier/.ratifier_reports"
             if not System.is_directory_exist(self.test_reportd):
                 self.__create_test_reportd(self.test_reportd)

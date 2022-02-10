@@ -1,4 +1,11 @@
 *.pyc
-*.ratifer_reports
+*.html
+*.css
+*.pytest_cache
+*.DS_Store
 
+*.idea
+*.ratifier_reports
 
+venv
+ratifier/assets

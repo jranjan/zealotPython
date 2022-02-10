@@ -43,7 +43,6 @@ def run(ctx, service, suite):
     try:
         config = RatifierConfig()
         s = ServiceRender(service, config.get_test_rootd(), suite, config.get_test_reportd())
-        print('ServiceRender(service')
         s.render()
     except ConfigException as re:
         print(re.get_msg)

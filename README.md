@@ -26,3 +26,7 @@ meant for learning purpose.
     - [Official site](https://docs.pytest.org/en/7.0.x/)
     - [Learn pytest youtube](https://www.youtube.com/watch?v=snDSB9b8v_E)   
     - [pytest-html](https://pypi.org/project/pytest-html/)
+  
+# Repostiory reference
+  
+- See list [here](https://analyticsindiamag.com/10-most-used-python-github-repositories-to-look-out-for-in-2019/)

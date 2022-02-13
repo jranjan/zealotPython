@@ -8,6 +8,7 @@
 *.ratifier_reports
 
 venv
+__pycache__
 ratifier/assets
 venv/*
 

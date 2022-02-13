@@ -9,3 +9,5 @@
 
 venv
 ratifier/assets
+venv/*
+

@@ -1,0 +1,46 @@
+availability:
+  calculation: Successful Process Results / Enqueue Requests
+  downsamplingIntervalInMin: 10000
+  exemptFromHealthMonitoring: false
+  lowerThreshold: 99.5
+  metricDefinition: Percentage of successful Big Object Counter runs
+  metricExpression: SCALE(DIVIDE_V(SUM($start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.processCron.REQUEST_COUNT.COUNT.Count{status=200}:sum:30m-sum,FILL(#$start#,#$end#,#1m#,#0m#,#0#)),SUM($start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.enqueueCron.REQUEST_COUNT.COUNT.Count{status=200|417}:sum:30m-sum,FILL(#$start#,#$end#,#1m#,#0m#,#0#))),#100#)
+  notes: null
+  upperThreshold: 99.9
+duration:
+  calculation: null
+  downsamplingIntervalInMin: 10000
+  exemptFromHealthMonitoring: false
+  lowerThreshold: 900000
+  metricDefinition: P95 duration of Big Object Counter gridforce job
+  metricExpression: $start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.processCron.DURATION.PERCENTILE_SET.p95th{status=200}:avg
+  notes: null
+  upperThreshold: 1800000
+errorrate:
+  calculation: Enqueue Errors + Process Errors
+  downsamplingIntervalInMin: 10000
+  exemptFromHealthMonitoring: false
+  lowerThreshold: 1
+  metricDefinition: Error rate of creating or running Big Object Counter
+  metricExpression: 'SUM($start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.enqueueCron.REQUEST_COUNT.COUNT.Count{status=417}:sum:1m-sum,$start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.processCron.REQUEST_COUNT.COUNT.Count{status=417}:sum:1m-sum,FILL(#$start#,
+    #$end#, #1m#,#0m#,#0#))'
+  notes: null
+  upperThreshold: 2
+requestrate:
+  calculation: Total enqueue requests / time
+  downsamplingIntervalInMin: 10000
+  exemptFromHealthMonitoring: false
+  lowerThreshold: 2
+  metricDefinition: Request rate of Big Object Counter jobs
+  metricExpression: SUM($start:$end:core_crm_*.platformservices.$datacenter.$superpod.$pod:CustomBigObjects.BigObjectCounter.-.enqueueCron.REQUEST_COUNT.COUNT.Count:sum:1m-sum)
+  notes: null
+  upperThreshold: 5
+saturation:
+  calculation: null
+  downsamplingIntervalInMin: 10000
+  exemptFromHealthMonitoring: false
+  lowerThreshold: null
+  metricDefinition: null
+  metricExpression: null
+  notes: null
+  upperThreshold: null

@@ -3,6 +3,8 @@
 *.css
 *.pytest_cache
 *.DS_Store
+*.bak
+*.xml
 
 *.idea
 *.ratifier_reports
